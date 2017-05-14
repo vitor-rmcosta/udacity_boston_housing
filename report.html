@@ -13271,7 +13271,7 @@ mZmZmZlZk/lAy8zMzMzMrMn+D5sG1lc3HjHCAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The score of the training curve decreases as we add more training points, while the testing score increases as we add more testing points. According to the graphs above, probably the training score would remain stable after certain point and the testing score would increase if we add more training points. This would occurr in my opinion because our model would start to generalize better the data instead of memorize it.</p>
+<p>Answer: The score of the training curve decreases as we add more training points, while the testing score increases as we add more testing points. According to the graphs above, probably the training score would remain stable after certain point and the testing score would converge to its optimal score. This would occurr, in my opinion, because our model would start to generalize better the data instead of memorize it.</p>
 
 </div>
 </div>
@@ -13825,7 +13825,8 @@ scRnjDGmTbHEZ4wxpk2xxGeMMaZNscRnjDGmTfl/H7IRR4Xa69wAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The K-Fold Cross Validation is a method in which our data set is divided into K subsets. Then, our algorithm is trained several times using K-1 subsets created by K-Folding and tested using usually 1 subset. According to the Cross-Validation documentation, this method benefits grid search since we can avoid the problem of overfitting (our effective validation set size is larger) and because we can more reliably estimate the performance of the model with various parameters during grid search.</p>
+<p>Answer: The K-Fold Cross Validation is a method in which our data set is divided into K subsets. Then, our algorithm is trained K times using K-1 subsets created by K-Folding and tested using usually 1 subset. For each train/test iteration the accuracy is evaluated. In the end this method averages the scores giving a more accurate final score. It is more reliable than if we had used only one split.</p>
+<p>According to the Cross-Validation documentation, this method benefits grid search since we can avoid the problem of overfitting (our effective validation set size is larger) and because we can more reliably estimate the performance of the model with various parameters during grid search.</p>
 
 </div>
 </div>
@@ -13960,7 +13961,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: 4. It is lower than I thought (6).</p>
+<p>Answer: The maximum depth of 4. Initially I thought that the maximum depth would be 6, but looking again to the graphs in the question number 6 I see that our model becomes susceptible to high variance after the maximum depth of 4 (the validation score begins to decrease and the training score increases, what represents high variance), therefore 4 is the optimal value for this parameter.</p>
 
 </div>
 </div>
@@ -14050,11 +14051,16 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The prices above are very close to similar prices found in the data. The following values were extracted from the data:</p>
+<p>Answer: I would recommend the prices found by the model. They are very close to similar prices found in the data. The following values were extracted from the data:</p>
 <p>5.79    15.84   16.0    426300.0;
 4.88    30.62   20.2    214200.0;
 8.04    3.13    17.4    789600.0;</p>
 <p>This means that the error (the distance between the predicted value and the real value) is not too big, therefore our model is making a good job, predicting reasonable prices.</p>
+<p>Regarding to these prices, a quick analysis in the features would justify them:</p>
+<p>RM -&gt; Expected to increase the price;
+LSTAT -&gt; Expected to decrease the price;
+PTRATIO -&gt; Expected to decrease the price;</p>
+<p>Based on this, it is expected that the price for the client 3 to be much higher than the price for the other clients, since he has a house with many rooms and with a low poverty level and a low rate of students per teacher. Regarding to client's 1 and 2, despite the fact that they own houses with almost the same number of rooms, the second client lives in an area with a higher poverty level and rate of students per teacher, therefore it is expected his house to be the cheaper.</p>
 
 </div>
 </div>
