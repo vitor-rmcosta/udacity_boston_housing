@@ -11886,13 +11886,13 @@ div#notebook {
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">numpy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
 
 <span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">numpy_array</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">numpy_array</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">numpy_array</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
@@ -11958,7 +11958,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: I believe that an increase in the RM feature would increase the value of MEDV, whereas an increase in the value of both LSTAT and PTRATIO would decrease the value of MEDV.</p>
+<p>Answer: I believe that an increase in the RM feature would increase the value of MEDV since that houses with many rooms usually have a higher cost, whereas an increase in the value of both LSTAT and PTRATIO would decrease the value of MEDV, because the number of lower class homeowners and the ratio of students to teachers would impact negatively the neighborhood (the first one due to the low quality of the houses, cars and etc, and the second because a high rate of students per teacher usually means a lower level teaching).</p>
 
 </div>
 </div>
@@ -13271,7 +13271,7 @@ mZmZmZlZk/lAy8zMzMzMrMn+D5sG1lc3HjHCAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The score of the training curve decreases as we add more training points. In comparison the testing score increases as we add more testing points. Having more training points decreases the training score and increases the testing score.</p>
+<p>Answer: The score of the training curve decreases as we add more training points, while the testing score increases as we add more testing points. According to the graphs above, probably the training score would remain stable after certain point and the testing score would increase if we add more training points. This would occurr in my opinion because our model would start to generalize better the data instead of memorize it.</p>
 
 </div>
 </div>
@@ -13753,7 +13753,7 @@ scRnjDGmTbHEZ4wxpk2xxGeMMaZNscRnjDGmTfl/H7IRR4Xa69wAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The model trained with maximum depth of 1 tends to suffer from high bias. When trained with maximum depth of 10 tends to suffer from high variance. According to the graph, with maximum depth of 1 the model is performing poorly in the training set, whereas with maximum depth of 10 it is performing badly in the test set.</p>
+<p>Answer: The model trained with maximum depth of 1 tends to suffer from high bias. When trained with maximum depth of 10 tends to suffer from high variance. According to the graph, with maximum depth of 1 the model is performing poorly in the training set what corresponds to a high bias problem, whereas with maximum depth of 10 it is having a good performance in the training set and performing badly in the test set, what corresponds to a high variance problem. This means that our model can learn very easily from the training examples, however, it doesn’t generalize well to new situations.</p>
 
 </div>
 </div>
@@ -13773,7 +13773,7 @@ scRnjDGmTbHEZ4wxpk2xxGeMMaZNscRnjDGmTfl/H7IRR4Xa69wAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: Maximum depth of 6. In this point the model is having a good performance in both training and testing.</p>
+<p>Answer: Maximum depth of 4. In this point the model is having the best performance in both training and validating scores. I believe that this is the best value because the validation score begins to decrease in maximum depth 5 and the training score increases, what can lead to high variance.</p>
 
 </div>
 </div>
@@ -13804,7 +13804,7 @@ scRnjDGmTbHEZ4wxpk2xxGeMMaZNscRnjDGmTfl/H7IRR4Xa69wAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: GridSearchCV is a function used to tune the parameters of algorithms using k-folding cross validation, in order to increase performance and accuracy.</p>
+<p>Answer: GridSearchCV is a function used to tune the parameters of algorithms using k-folding cross validation, in order to increase performance and accuracy. There are some parameters which can be used with our models to increase performance and accuracy. Unfortunately it is not easy to choose these parameters. GridSearchCV is a technique useful to find these parameters, in which we create a GridSearchCV object passing to it our model and the parameters we want to test, and then GridSearchCV returns to us the model optimized with the parameters we tested. GridSearchCV tests the combination of all the parameters tested in order to find the best values and combination.</p>
 
 </div>
 </div>
@@ -13825,7 +13825,7 @@ scRnjDGmTbHEZ4wxpk2xxGeMMaZNscRnjDGmTfl/H7IRR4Xa69wAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: The K-Fold Cross Validation is a method in which our data set is divided into several subsets. Then, our algorithm is trained several times using K-1 subsets created by K-Folding. This approach helps to maximize the running time of our algorithm (although it will decrease the training time) and it increases the accuracy.</p>
+<p>Answer: The K-Fold Cross Validation is a method in which our data set is divided into K subsets. Then, our algorithm is trained several times using K-1 subsets created by K-Folding and tested using usually 1 subset. According to the Cross-Validation documentation, this method benefits grid search since we can avoid the problem of overfitting (our effective validation set size is larger) and because we can more reliably estimate the performance of the model with various parameters during grid search.</p>
 
 </div>
 </div>
@@ -13881,7 +13881,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
@@ -14050,7 +14050,11 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Answer: These prices are very close to similar prices found in the data.</p>
+<p>Answer: The prices above are very close to similar prices found in the data. The following values were extracted from the data:</p>
+<p>5.79    15.84   16.0    426300.0;
+4.88    30.62   20.2    214200.0;
+8.04    3.13    17.4    789600.0;</p>
+<p>This means that the error (the distance between the predicted value and the real value) is not too big, therefore our model is making a good job, predicting reasonable prices.</p>
 
 </div>
 </div>
